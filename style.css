@@ -1,0 +1,132 @@
+body {
+    margin: 0; 
+    background:  linear-gradient(0deg, rgb(139, 220, 255), rgb(100, 100, 100));
+    height: 700px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  nav {
+    background: darkgray;
+    box-shadow: 0 2px 0 0 darkgray;
+    border-top: 1px solid darkgray;
+    text-align: left;
+  }
+  nav a {
+    text-decoration: none;
+    display: block;
+    transition: .3s linear;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .topmenu > li {
+    display: inline-block;
+    position: relative;
+    margin-right: -4px;
+    border-left: 1px solid #ECF1F2;
+  }
+  .topmenu > li:last-child {border-right: 1px solid #ECF1F2;}
+  .topmenu > li > a {
+    font-weight: bold;
+    padding: 20px 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #1c1c1c;
+  }
+  .active:after, .submenu-link:after {
+    font-family: "FontAwesome";
+    color: inherit;
+    margin-left: 10px;
+  }
+  .topmenu > li > a:hover, .submenu li a:hover {color: lightskyblue; background-color: #1c1c1c;}
+  .submenu {
+    position: absolute;
+    left: -1px;
+    z-index: 5;
+    width: 240px;
+    border-bottom: 1px solid darkgray;
+    visibility: hidden;
+    opacity: 0;  
+    transform: translateY(10px);
+    transition: .3s ease-in-out;
+  }
+  .submenu li {position: relative;}
+  .submenu a {
+    background: darkgray;
+    border-top: 1px solid gray;
+    border-right: 1px solid  gray;
+    border-left: 1px solid  gray;
+    color: #1c1c1c;
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+  }
+  .submenu .submenu {
+    position: absolute;
+    top: 0;
+    left: calc(100% - 1px);
+    left: -webkit-calc(100% - 1px);
+  }
+  nav li:hover > .submenu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  .val ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+  }
+  .val li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: lightgrey;
+  }
+  .val li a:hover {
+    background-color: #555;
+    color: white;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    background-color: lightgray;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: calc(100% - 1px);
+    left: -webkit-calc(100% - 1px);
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  img {
+    position: absolute;
+    left: 500px;
+    top: 50px;
+    z-index: -1;
+    animation-name: ads;
+    animation-duration: 4s;
+    opacity: 0;
+    animation-delay: 10s;
+  }
+
+  @keyframes ads {
+    0%   {opacity: 0;}
+    50%  {opacity: 1;}
+    100% {opacity: 0;}
+  }
